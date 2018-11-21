@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: password
+
+
+development:
+  <<: *default
+  database: color_grid_development
+
+test:
+  <<: *default
+  database: color_grid_test
+
+production:
+  <<: *default
+  database: color_grid_production
+  username: color_grid
+  password: <%= ENV['COLOR_GRID_DATABASE_PASSWORD'] %>
