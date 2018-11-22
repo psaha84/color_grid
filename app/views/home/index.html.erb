@@ -1,0 +1,15 @@
+<aside class="color-picker-container">
+  <h3>Pick your Color</h3>
+  <%= form_tag create_palette_path, class: "create-palette-form" do %> 
+    <%= text_field_tag :color, '', required: true, class: 'color' %>
+    <%= submit_tag 'Submit' %>
+  <% end %>
+</aside>
+<section class="color-grid-container">
+  <h3>Select the Grid</h3> 
+  <section></section> 
+</section>
+
+<%= javascript_tag do %>
+  ColorGrid.Palette.init("<%= j raw Palette.latest.to_json %>");
+<% end %>

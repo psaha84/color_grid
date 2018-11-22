@@ -1,0 +1,38 @@
+#main-container {
+  padding: 20px;
+}
+
+.color-picker-container {
+  width: 15%;
+  float: left;
+  .minicolors-input {
+    height: 30px;
+  }
+}
+
+.color-grid-container {
+  width: 85%;
+  float: right;
+  border-left: 1px solid #ccc;
+  padding-left: 10px;
+  section {
+    max-height: 600px;
+    overflow-y: scroll;
+  }
+
+  .grid-items {
+    list-style-type: none;
+
+    .grid {
+      display: inline-block;
+      border: 1px solid #000;
+      width: 4%;
+      height: 50px;
+      &.selected {
+        border-width: 2px;
+      }
+    }
+  }
+}
+
+
