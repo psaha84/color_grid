@@ -1,0 +1,19 @@
+<h2>Leaderboard</h2>
+<table class="table table-striped">
+  <thead>
+   <tr>
+    <td>Rank</td>
+    <td>Username</td>
+    <td>Favourite Color</td>
+   </tr>
+  </thead>
+  <tbody>
+   <% @users.each_with_index do |user,index|%>
+    <tr>
+     <td><%= index + 1 %></td>
+     <td><%= user.username%></td>
+     <td><span class="fav-color" style="background-color: <%= user.fav_color %>"></span> <%= user.fav_color %></td>
+    </tr>
+   <%end%>
+  </tbody>
+</table>
