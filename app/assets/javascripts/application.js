@@ -14,4 +14,5 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery.minicolors
+//= require_tree ./channels
 //= require_tree .
