@@ -12,15 +12,14 @@ ColorGrid.Palette = {
     for(var row = 0 ; row < 20; row++) {
       var gridContainer = $("<ul class='grid-items'></ul>");
       for(var col = 0 ; col < 20; col++) {
-        gridContainer.append(ColorGrid.Palette.renderGrid(row, col));      
+        var grid = ColorGrid.Palette.getGrid(row, col);
+        gridContainer.append(ColorGrid.Palette.renderGrid(row, col, grid));      
       }
       parentContainer.append(gridContainer);  
     }
   },
 
-  renderGrid: function(row, column) {
-    var grid = ColorGrid.Palette.getGrid(row, column);
-    
+  renderGrid: function(row, column, grid) {
     return JST['templates/grid']({
       row: row,
       column: column, 
