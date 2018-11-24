@@ -9,6 +9,7 @@ ColorGrid.Palette = {
     var parentContainer = $(".color-grid-container").find("section");
     parentContainer.html("");
     
+    // draw the grids    
     for(var row = 0 ; row < 20; row++) {
       var gridContainer = $("<ul class='grid-items'></ul>");
       for(var col = 0 ; col < 20; col++) {

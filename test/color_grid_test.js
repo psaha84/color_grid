@@ -12,8 +12,6 @@ Scenario('select and color one grid', async(I) => {
   I.click('#color');
   I.click('.minicolors-grid');
   I.click('body');
-  const color = await I.grabValueFrom('#color');
-  
   I.click("Submit");
   I.see("Grid has been successfully updated.");
 });

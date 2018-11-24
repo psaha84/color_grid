@@ -3,6 +3,7 @@ class Palette < ApplicationRecord
   validates :user, :row, :col, :color, presence: true
 
   def self.latest
+    # Get the latest palette
     Palette.find_by_sql("Select * from palettes where id in (select max(id)
       from palettes group by row, col);")
   end
