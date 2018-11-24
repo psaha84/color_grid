@@ -1,2 +1,7 @@
 $(".create-palette-form").find(".color").val("");
-ColorGrid.Palette.init("<%= j raw Palette.latest.to_json %>");
+<% if @palette.errors.empty? %>
+  $(".alert").html("Grid has been successfully updated.").addClass("alert-success").show();
+  ColorGrid.Palette.init("<%= j raw Palette.latest.to_json %>");
+<% else %>
+  $(".alert").html("<%= @palette.errors.full_messages.to_sentence %>").addClass("alert-success").show();
+<% end %>

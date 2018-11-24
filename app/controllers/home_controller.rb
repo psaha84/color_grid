@@ -9,10 +9,10 @@ class HomeController < ApplicationController
   end
 
   def create_palette
-    palette = current_user.palettes.new(palette_params)
+    @palette = current_user.palettes.new(palette_params)
 
-    if palette.save
-      ActionCable.server.broadcast 'grids', grid: palette.to_json
+    if @palette.save
+      ActionCable.server.broadcast 'grids', grid: @palette.to_json
     end  
   end  
 

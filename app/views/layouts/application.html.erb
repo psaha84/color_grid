@@ -20,12 +20,13 @@
           <%= link_to "Leaderboard", leaderboard_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><%= current_user.username %></a>
+          <a class="username nav-link" href="#"><%= current_user.username %></a>
         </li>  
       </ul>
      
     </nav>    
     <div id="main-container">
+      <p class="alert alert-success"></p>
       <div class="content-wrapper">
         <%= yield %>
       </div>
