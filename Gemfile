@@ -16,7 +16,15 @@ gem 'jquery-minicolors-rails'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'factory_girl_rails'
 end
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.1.1'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  gem 'database_cleaner'
+end  
 
 group :development do
   gem 'web-console', '>= 3.3.0'
