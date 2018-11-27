@@ -11,5 +11,5 @@
 </section>
 
 <%= javascript_tag do %>
-  ColorGrid.Palette.init("<%= j raw Palette.latest.to_json %>");
+  ColorGrid.Palette.init("<%= j raw Palette.includes(:user).latest.to_json %>");
 <% end %>

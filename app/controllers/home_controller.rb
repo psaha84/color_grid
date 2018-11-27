@@ -4,9 +4,7 @@ class HomeController < ApplicationController
 
   def leaderboard
     # get all the user along with their favourite color
-    @users = User.order("palettes_count desc").select("users.*, (select color from palettes where palettes.user_id = users.id  
-      group by color having count(color)=(select max(t.color_count) from (select count(color) 
-      color_count from palettes group by color)t)) as fav_color")
+    @users = User.get_record_along_with_fav_color
   end
 
   def create_palette
